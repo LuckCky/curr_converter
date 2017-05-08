@@ -6,7 +6,7 @@ symbols = [
   {"symbol": "R$", "cc": "BRL", "name": "Brazilian real"},
   {"symbol": "C$", "cc": "CAD", "name": "Canadian dollar"},
   {"symbol": "Fr.", "cc": "CHF", "name": "Swiss franc"},
-  {"symbol": "\u00a5", "cc": "CNY", "name": "Chinese/Yuan renminbi"},
+  {"symbol": "\u04B0", "cc": "CNY", "name": "Chinese/Yuan renminbi"},
   {"symbol": "K\u010d", "cc": "CZK", "name": "Czech koruna"},
   {"symbol": "Kr", "cc": "DKK", "name": "Danish krone"},
   {"symbol": "\u00a3", "cc": "GBP", "name": "British pound"},
