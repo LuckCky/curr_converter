@@ -39,7 +39,7 @@ def converter(input_amount, input_currency, output_currency):
         return json.dumps(result)
     try:
         curr_rate = rate[output_currency]
-        output_amount = input_amount / eur_rate * curr_rate
+        output_amount = round(input_amount / eur_rate * curr_rate, 2)
         result = {
             "input":
                 {
@@ -55,7 +55,7 @@ def converter(input_amount, input_currency, output_currency):
         all_currencies = {}
         for key, value in rate.items():
             curr_rate = rate[key]
-            output_amount = input_amount / eur_rate * curr_rate
+            output_amount = round(input_amount / eur_rate * curr_rate, 2)
             all_currencies[key] = output_amount
         result["input"] = {"amount": input_amount}
         result["input"]["currency"] = input_currency
