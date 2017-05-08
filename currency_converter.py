@@ -17,11 +17,6 @@ def create_parser():
 
 def converter(input_amount, input_currency, output_currency):
 
-    if not any([input_amount, input_currency]):
-        result = {"input": "error! No arguments provided"}
-        print(json.dumps(result))
-        return json.dumps(result)
-
     if input_amount <= 0:
         result = {"input": "error! Currency amount cannot be negative or zero"}
         print(json.dumps(result))
