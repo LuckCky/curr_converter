@@ -25,6 +25,12 @@ def converter(input_amount, input_currency, output_currency):
     input_currency = parse_currency_args(input_currency)
     output_currency = parse_currency_args(output_currency)
     rate = parse_rate()
+    try:
+        result = {"input": rate["error"]}
+        print(json.dumps(result))
+        return json.dumps(result)
+    except KeyError:
+        pass
     result = {}
     try:
         eur_rate = rate[input_currency]

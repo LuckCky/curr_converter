@@ -11,7 +11,12 @@ def parse_currency_args(currency):
 
 
 def parse_rate():
-    currency_xml = requests.get(ecb_url).content.decode()
+    try:
+        response = requests.get(ecb_url)
+    except Exception as e:
+        return {"error": "error occurred while accessing www.ecb.europa.eu: {}".format(e)}
+    else:
+        currency_xml = response.content.decode()
     root = ET.fromstring(currency_xml)
     currencies_list = [currency.attrib.get('currency') for currency in root.iter(cube) if currency.attrib.get('currency')]
     rates_list = [float(currency.attrib.get('rate')) for currency in root.iter(cube) if currency.attrib.get('rate')]
