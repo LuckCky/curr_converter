@@ -16,8 +16,8 @@ class TestCurrency(unittest.TestCase):
 
     def test_parse_rate(self):
         self.assertIsInstance(parse_rate(), dict)
-        self.assertEqual(parse_rate()['EUR'], 1)
-        self.assertIsInstance(parse_rate()['EUR'], float)
+        self.assertEqual(parse_rate()['EUR'], 1.0)
+        self.assertIsInstance(parse_rate()['CZK'], float)
         self.assertIsInstance(parse_rate()['USD'], float)
 
 if __name__ == '__main__':
