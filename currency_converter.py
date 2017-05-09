@@ -22,6 +22,7 @@ def converter(input_amount, input_currency, output_currency):
         print(json.dumps(result))
         return json.dumps(result)
 
+    # change symbols for three letter name
     input_currency = parse_currency_args(input_currency)
     output_currency = parse_currency_args(output_currency)
     rate = parse_rate()
