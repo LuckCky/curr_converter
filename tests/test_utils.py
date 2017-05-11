@@ -15,10 +15,12 @@ class TestCurrency(unittest.TestCase):
         self.assertEqual(parse_currency_args(None), None)
 
     def test_parse_rate(self):
-        self.assertIsInstance(parse_rate(), dict)
-        self.assertEqual(parse_rate()['EUR'], 1.0)
-        self.assertIsInstance(parse_rate()['CZK'], float)
-        self.assertIsInstance(parse_rate()['USD'], float)
+        self.assertIsInstance(parse_rate()[0], dict)
+        self.assertIsInstance(parse_rate()[1], bool)
+        self.assertEqual(len(parse_rate()), 2)
+        self.assertEqual(parse_rate()[0]['EUR'], 1.0)
+        self.assertIsInstance(parse_rate()[0]['CZK'], float)
+        self.assertIsInstance(parse_rate()[0]['USD'], float)
 
 if __name__ == '__main__':
     unittest.main()
