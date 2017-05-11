@@ -102,7 +102,6 @@ def main():
         return rate
     # check input conditions
     input_error = check_input(input_amount, input_currency, rate)
-    print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', input_error)
     if input_error:
         return input_error
     return converter(input_amount, input_currency, output_currency, rate)
