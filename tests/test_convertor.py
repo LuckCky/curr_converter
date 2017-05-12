@@ -17,11 +17,7 @@ class ConverterTestCase(CommandLineTestCase):
             self.parser.parse_args(["--amount", "--input_currency", "--output_currency"])
 
     def test_with_three_args(self):
-        args = self.parser.parse_args(["--amount", '10', "--input_currency", 'USD', "--output_currency", 'EUR'])
-        # result = converter(args.amount, args.input_currency, args.output_currency, test_rate)
-        result = converter(10, 'USD', 'EUR', test_rate)
-
-        self.assertIsNotNone(result)
+        self.assertIsNotNone(converter(10, 'USD', 'EUR', test_rate))
 
     def test_with_two_args(self):
         with self.assertRaises(SystemExit):
