@@ -74,7 +74,7 @@ def converter(input_amount, input_currency, output_currency, rate):
     except KeyError:
         all_currencies = {}
         for key, value in rate.items():
-            curr_rate = rate[key]
+            curr_rate = value
             output_amount = round(input_amount / eur_rate * curr_rate, 2)
             all_currencies[key] = output_amount
         result["input"] = {"amount": input_amount}
@@ -102,6 +102,7 @@ def main():
     rate, rate_error = parse_rate()
     if rate_error:
         return rate
+
     # check input conditions
     input_error = check_input(input_amount, input_currency, rate)
     if input_error:

@@ -8,9 +8,9 @@ from config import ecb_url, cube, symbols
 
 def parse_currency_args(currency):
     """
-    checks if we got symbol, nor three letter currency name
+    checks if we got symbol, not three letter currency name
     :param currency: user input symbol or three letter currency name
-    :return: currency symbol or None
+    :return: currency symbol or input
     """
     if currency and len(currency) < 3:
         currency = next((element['cc'] for element in symbols if element['symbol'] == currency), currency)
