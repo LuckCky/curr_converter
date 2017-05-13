@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import unittest
 
 from currency_converter import create_parser, converter, check_input, main

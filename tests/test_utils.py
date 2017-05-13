@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import unittest
 
 from utils import parse_currency_args, parse_rate
